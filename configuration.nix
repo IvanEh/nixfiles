@@ -14,6 +14,7 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./hardware-base.nix
+      ./modules/user-apps.nix
     ];
 
   # Bootloader.
@@ -102,13 +103,6 @@ boot.supportedFilesystems = [ "ntfs" ];
     isNormalUser = true;
     description = "Ivan";
     extraGroups = [ "networkmanager" "wheel" "docker"];
-    packages = with pkgs; [
-      kate
-      steam
-      discord
-      skypeforlinux
-    #  thunderbird
-    ];
   };
 
   # Allow unfree packages
