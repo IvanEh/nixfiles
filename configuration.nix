@@ -2,21 +2,19 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./hardware-base.nix
-      ./modules/kernel-boot.nix
-      ./modules/all-graphics.nix
-      ./modules/network.nix
-      ./modules/shell.nix
-      ./modules/sound.nix
-      ./modules/system-apps.nix
-      ./modules/user-apps.nix
-      ./modules/virt.nix
-    ];
+{ config, pkgs, ... }: {
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./hardware-base.nix
+    ./modules/kernel-boot.nix
+    ./modules/all-graphics.nix
+    ./modules/network.nix
+    ./modules/shell.nix
+    ./modules/sound.nix
+    ./modules/system-apps.nix
+    ./modules/user-apps.nix
+    ./modules/virt.nix
+  ];
 
   # Set your time zone.
   time.timeZone = "America/Los_Angeles";
@@ -36,10 +34,8 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -48,12 +44,11 @@
   users.users.ivaneh = {
     isNormalUser = true;
     description = "Ivan";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -84,7 +79,6 @@
 
   security.polkit.enable = true;
 
-
   #  error: Package ‘teams-1.6.00.4464’ [...] is not available on the requested hostPlatform:
-  nixpkgs.config.allowUnsupportedSystem = true; 
+  nixpkgs.config.allowUnsupportedSystem = true;
 }

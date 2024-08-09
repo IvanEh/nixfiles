@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -14,6 +13,6 @@
     xkbVariant = "";
   };
 
-
-  hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that steam uses
+  hardware.opengl.driSupport32Bit =
+    true; # Enables support for 32bit libs that steam uses
 }
