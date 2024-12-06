@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 let
   # Inspired by https://lazamar.co.uk/nix-versions/?channel=nixpkgs-unstable&package=nodejs
-  upstream = import (builtins.fetchTarball "channel:nixos-23.11") {
-    config = config.nixpkgs.config;
-  };
+  # upstream = import (builtins.fetchTarball "channel:nixos-24.11") {
+  #   config = config.nixpkgs.config;
+  # };
 
 in {
 
@@ -51,9 +51,8 @@ in {
     poppler
     poppler_utils
     zoom-us
-    # nodejs20
-    upstream.nodePackages_latest.pnpm
-    upstream.nodejs_20
+    nodePackages_latest.pnpm
+    nodejs_20
     obsidian
     vscode
     qemu
@@ -61,5 +60,9 @@ in {
     remnote
     nix-output-monitor
     nixfmt
+    vlc
+    anytype2
+    siyuan
+    libsForQt5.kio-gdrive
   ];
 }

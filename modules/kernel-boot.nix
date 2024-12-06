@@ -4,7 +4,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Acer Swift 5 specific configs, see https://wiki.archlinux.org/title/Acer_Swift_5
   # Disabled for Wifi Testing - Aug 13

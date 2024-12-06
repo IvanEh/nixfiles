@@ -1,13 +1,25 @@
 https://www.zknotes.com/page/alternate-nixpkgs-in-flakes-nixos
 
-sudo nix-channel --add https://nixos.org/channels/nixos-24.05 nixos
-sudo nixos-rebuild switch --upgrade
 nixfmt *
 
 # TODO
 
 - Migrate to flakes
 - Improve set up using https://github.com/bobvanderlinden/nixos-config/blob/master/flake.nix
+
+# Channels
+
+https://channels.nixos.org/ - modification time
+
+https://unix.stackexchange.com/questions/491727/how-do-i-upgrade-nixos-to-use-a-new-channel-nixos-versions
+
+```
+sudo nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
+sudo nix-channel --update
+./rebuild.sh
+```
+
+Upgrade is just --update + rebuild
 
 # Home Manager
 
@@ -22,3 +34,7 @@ nix-channel --add https://github.com/nix-community/plasma-manager/archive/trunk.
 nix-channel --update plasma-manager
 ```
 
+# Debugging
+
+nixos-generate-config --dir .
+nixos-rebuild test --show-trace -I "nixos-config=/home/ivaneh/nixos/conf/configuration.nix"
