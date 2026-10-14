@@ -1,9 +1,5 @@
 #!/bin/sh
-echo "$ sudo nixos-rebuild switch"
+echo "$ sudo nixos-rebuild switch --flake /home/ivaneh/nixos#nixos"
 
-# sudo nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
-# sudo nix-channel --updated
-sudo sh -c  'nixos-rebuild switch --show-trace -I "nixos-config=/home/ivaneh/nixos/configuration.nix"'
-# |& nom
+sudo nixos-rebuild switch --show-trace --flake /home/ivaneh/nixos#nixos
 echo "Finished building system. You can close the window..."
-

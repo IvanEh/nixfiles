@@ -53,6 +53,7 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [ "docker-28.5.2" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

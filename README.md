@@ -16,12 +16,15 @@ https://unix.stackexchange.com/questions/491727/how-do-i-upgrade-nixos-to-use-a-
 
 Update:
 ```
-sudo nix-channel --add https://nixos.org/channels/nixos-25.11 nixos
-sudo nix-channel --update
-./rebuild.sh
+nix flake update nixpkgs
+nix flake metadata
+nix flake check
+nix build .#nixosConfigurations.nixos.config.system.build.toplevel --no-link
+nixos-rebuild build --flake .#nixos
+sudo nixos-rebuild switch --flake .#nixos
 ```
 
-Upgrade is just --update + rebuild
+`nix flake update` updates `flake.lock` without applying the configuration.
 
 # Home Manager
 
