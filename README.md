@@ -13,8 +13,10 @@ https://channels.nixos.org/ - modification time
 
 https://unix.stackexchange.com/questions/491727/how-do-i-upgrade-nixos-to-use-a-new-channel-nixos-versions
 
+
+Update:
 ```
-sudo nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
+sudo nix-channel --add https://nixos.org/channels/nixos-25.11 nixos
 sudo nix-channel --update
 ./rebuild.sh
 ```
@@ -38,3 +40,7 @@ nix-channel --update plasma-manager
 
 nixos-generate-config --dir .
 nixos-rebuild test --show-trace -I "nixos-config=/home/ivaneh/nixos/conf/configuration.nix"
+
+# Clean UP
+
+nix-collect-garbage  --delete-old
