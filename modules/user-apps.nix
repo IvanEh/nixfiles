@@ -1,9 +1,8 @@
 { config, pkgs, ... }: {
   users.users.ivaneh.packages = with pkgs; [
     firefox
-    kate
+    kdePackages.kate
     steam
     discord
-    skypeforlinux
   ];
 }

@@ -7,9 +7,9 @@
     ./hardware-configuration.nix
     ./hardware-base.nix
     ./modules/kernel-boot.nix
-    ./modules/adhoc.nix
+    # ./modules/adhoc.nix
     ./modules/all-graphics.nix
-    ./modules/home-manager.nix
+    # ./modules/home-manager.nix
     ./modules/network.nix
     ./modules/shell.nix
     ./modules/sound.nix

@@ -3,7 +3,7 @@
 let
   plasma = builtins.fetchGit {
     url = "https://github.com/nix-community/plasma-manager";
-    rev = "5a0c70a007837e2db01e0bb68971792e8653d32c";
+    rev = "a4b33606111c9c5dcd10009042bb710307174f51";
   };
 in { config, pkgs, ... }: {
   imports = [
