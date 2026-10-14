@@ -1,6 +1,5 @@
 { config, pkgs, ... }: {
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -8,9 +7,22 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+#    networking.wireless.networks = {
+#     "my network" = {
+#       psk = "mypasswd";
+#     };
+#  };
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot =
     true; # powers up the default Bluetooth controller on boot
   # services.blueman.enable = true;
+
+  networking.extraHosts =
+  ''
+    192.168.0.18 homeassistant.local
+  '';
+
+  # https://www.reddit.com/r/GeForceNOW/comments/11qudby/network_optimization_guide_reduce_lag/
+  networking.nameservers = [ "8.8.8.8" "8.8.4.4" ];
 }
