@@ -144,7 +144,7 @@ in {
     minikube
     kubectl
     git
-    percona-xtrabackup
+    # percona-xtrabackup
     bc
     nushell
     kdePackages.partitionmanager

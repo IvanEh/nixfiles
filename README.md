@@ -26,6 +26,12 @@ sudo nixos-rebuild switch --flake .#nixos
 
 `nix flake update` updates `flake.lock` without applying the configuration.
 
+To install the NixOS upgrade launcher on your desktop:
+
+```sh
+install -Dm755 /home/ivaneh/nixos/upgrade-nixos.desktop "$HOME/Desktop/upgrade-nixos.desktop"
+```
+
 # Home Manager
 
 https://nix-community.github.io/home-manager/index.xhtml

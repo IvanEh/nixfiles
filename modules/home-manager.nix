@@ -14,5 +14,15 @@ in { config, pkgs, ... }: {
     home.stateVersion = "24.05";
     programs.home-manager.enable = true;
 
+    xdg.desktopEntries.upgrade-nixos = {
+      name = "Upgrade NixOS";
+      comment = "Build updates and ask before switching";
+      icon = "system-software-update";
+      exec = "/home/ivaneh/nixos/upgrade_nixos.sh";
+      terminal = true;
+      type = "Application";
+      categories = [ "System" ];
+    };
+
   };
 }

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Upgrade NixOS
+Comment=Build NixOS updates and ask before switching
+Exec=/home/ivaneh/nixos/upgrade_nixos.sh
+Path=/home/ivaneh/nixos
+Terminal=true
+Categories=System;
