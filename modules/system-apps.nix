@@ -174,5 +174,7 @@ in {
     # xwayland-satellite # X # niri
     kdePackages.karousel
     codex
+    kde-rounded-corners
+    klassy
   ];
 }

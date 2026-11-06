@@ -10,7 +10,7 @@ in { config, pkgs, ... }: {
     <home-manager/nixos>
   #   "${plasma.outPath}/modules"
   ];
-  home-manager.users.ivaneh = { pkgs, ... }: {
+  home-manager.users.admin = { pkgs, ... }: {
     home.stateVersion = "24.05";
     programs.home-manager.enable = true;
 
@@ -18,7 +18,7 @@ in { config, pkgs, ... }: {
       name = "Upgrade NixOS";
       comment = "Build updates and ask before switching";
       icon = "system-software-update";
-      exec = "/home/ivaneh/nixos/upgrade_nixos.sh";
+      exec = "/home/admin/nixos/upgrade_nixos.sh";
       terminal = true;
       type = "Application";
       categories = [ "System" ];
